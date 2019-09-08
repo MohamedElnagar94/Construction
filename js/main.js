@@ -1,0 +1,19 @@
+$(document).ready(function(){
+    $(".serve_block").hide(0);
+    $(".serve_block[id='serve1']").show(0);
+
+    $('#nav-icon1').click(function(){
+        $(this).toggleClass('open');
+        $(".list_manu").toggleClass("list_manu_open")
+    });
+    $(document).scroll(function(){
+        $("#nav-icon1").removeClass('open');
+        $(".list_manu").removeClass("list_manu_open")
+    });
+    $(".serve_header").click(function(){
+        $(this).addClass("active_serve").siblings().removeClass("active_serve")
+        $(this).data("serve");
+        $(".serve_block").hide(0);
+        $(".serve_block[id="+$(this).data("serve")+"]").show(0);
+    })
+});
